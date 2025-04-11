@@ -12,16 +12,16 @@ public class Main {
 //        from the user
 
         //ACCEPT USER INPUT
-        Scanner s = new Scanner(System.in);
+        Scanner inputs = new Scanner(System.in);
 
         System.out.print("Principal Amount (no commas) e.g. 53000: ");
-        double principalAmount = s.nextDouble();
+        double principalAmount = inputs.nextDouble();
 
         System.out.print("Number of Years e.g. 15: ");
-        int years = s.nextInt();
+        long years = inputs.nextInt();
 
         System.out.print("Yearly Interest Rate e.g. 7.625: ");
-        double rawRate = s.nextDouble(); //0-100 with fraction
+        double rawRate = inputs.nextDouble(); //0-100 with fraction
 
         int MONTHS_IN_A_YEAR = 12;
         // MATHEMATICAL INPUTS
@@ -36,8 +36,9 @@ public class Main {
         //        double result = Math.pow(base, exponent);
         expectedMonthlyPaymentAmount = principalAmount * ((monthlyInterestRate * Math.pow((1 + monthlyInterestRate), numberOfPayments) / (Math.pow( (1+monthlyInterestRate), numberOfPayments) - 1)));
 
+
 //        This calculator would use a compounded interest formula.
-//        M=P×(i*(1+i)^n / ((1+i)^n)-1)
+//        M=P×(i*(1+i)^n / ((1+i)^n)-1)//       Math.pow(base, exponent)
 //                - Monthly Payment (M)
 //                - Principal (P): This is the total amount of the loan.
 //        - Annual Interest Rate (r): The nominal annual interest rate in
